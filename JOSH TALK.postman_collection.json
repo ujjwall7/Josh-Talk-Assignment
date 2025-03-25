@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "86f78212-8d01-47d5-9e60-2ae5e7f80adb",
+		"name": "JOSH TALK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23043473"
+	},
+	"item": [
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "GET Task",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/task/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"task",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Task Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/task/?id=1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"task",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Fix login issue",
+									"description": "String max_length = 255 chracters",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Resolve the bug causing login failure.",
+									"description": "String",
+									"type": "text"
+								},
+								{
+									"key": "task_type",
+									"value": "bug",
+									"description": "bug/feature/task",
+									"type": "text"
+								},
+								{
+									"key": "completed_at",
+									"value": "2025-03-26T12:00:00Z",
+									"description": "date time ",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"description": "YYYY-MM-DDTHH:MM:SSZ",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/task/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"task",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Assign Task",
+			"item": [
+				{
+					"name": "Assign Task Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "[1,2]",
+									"description": "List [], Foreign key User table",
+									"type": "text"
+								},
+								{
+									"key": "task_id",
+									"value": "2",
+									"description": "Task table foreign key",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/assign_task/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"assign_task",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Task Detail",
+			"item": [
+				{
+					"name": "User Detail Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/user_task/?user_id=2",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user_task",
+								""
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "urls",
+			"value": "127.0.0.1:8000",
+			"type": "string"
+		}
+	]
+}
